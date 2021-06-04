@@ -17,8 +17,11 @@ namespace NewsTimeAPI.Controllers
         private news_timeEntities3 db = new news_timeEntities3();
 
         // GET: api/Historials
+        [HttpGet]
+        [Route("api/Historialspruebas")]
         public IHttpActionResult GetHistorial()
-        {
+        {            
+
             var historialciudad = (from h in db.Historial
                                   join c in db.Ciudades on h.hstIDciudad equals c.CiudadID
                                   orderby h.IDHistorial descending
@@ -134,5 +137,5 @@ namespace NewsTimeAPI.Controllers
         {
             return db.Historial.Count(e => e.IDHistorial == id) > 0;
         }
-    }
+    }    
 }

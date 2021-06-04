@@ -17,9 +17,7 @@ namespace NewsTimeAPI.Controllers
         [Route("api/SearchTime/{idciudad}")]
         public IHttpActionResult Gettables(int idciudad)
         {
-            news_timeEntities3 sd = new news_timeEntities3();
-            //List<Ciudades> lciudades = sd.Ciudades.ToList();
-            //List<Noticia> lnoticias = sd.Noticia.ToList();
+            news_timeEntities3 sd = new news_timeEntities3();            
 
             var id_ciudad = Convert.ToInt32(idciudad);
 
@@ -80,7 +78,15 @@ namespace NewsTimeAPI.Controllers
                              ).ToList()
                          }).FirstOrDefault();
 
-            HistorialsController historialsController = new HistorialsController();                        
+            HistorialsController historialsController = new HistorialsController();
+
+            Historial historial = new Historial();
+
+            historial.hstIDciudad = 3;
+            historial.info = "dato nuevo 3";
+
+            historialsController.PostHistorial(historial);
+            //PostHistorial(historial);
 
             return Ok(query);
         }
