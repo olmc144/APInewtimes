@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="news_timeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Historial">
+    <Key>
+      <PropertyRef Name="IDHistorial" />
+    </Key>
+    <Property Name="IDHistorial" Type="Int32" Nullable="false" />
+    <Property Name="hstIDciudad" Type="Int32" Nullable="false" />
+    <Property Name="info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Noticia">
+    <Key>
+      <PropertyRef Name="Idnoticia" />
+    </Key>
+    <Property Name="Idnoticia" Type="Int32" Nullable="false" />
+    <Property Name="autor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="urlToImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="publishedAt" Type="DateTime" Precision="3" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IDCiudad" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="news_timeEntities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Historial" EntityType="Self.Historial" />
+    <EntitySet Name="Noticia" EntityType="Self.Noticia" />
+    <EntitySet Name="Ciudades" EntityType="news_timeModel.Ciudades" />
+    <EntitySet Name="Estados_tiempo" EntityType="news_timeModel.Estados_tiempo" />
+  </EntityContainer>
+  <EntityType Name="Ciudades">
+    <Key>
+      <PropertyRef Name="CiudadID" />
+    </Key>
+    <Property Name="CiudadID" Type="Int32" Nullable="false" />
+    <Property Name="CiudadNombre" Type="String" Nullable="false" MaxLength="35" FixedLength="true" Unicode="false" />
+    <Property Name="PaisCodigo" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Estados_tiempo">
+    <Key>
+      <PropertyRef Name="IdTeam" />
+    </Key>
+    <Property Name="IdTeam" Type="Int32" Nullable="false" />
+    <Property Name="observation_time" Type="DateTime" Precision="3" />
+    <Property Name="temperature" Type="Int32" />
+    <Property Name="weather_descriptions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="wind_speed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="wind_degree" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="wind_dir" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pressure" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="precip" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="humidity" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="cloudcover" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="feelslike" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="uv_index" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="visibility" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="IDCiudad" Type="Int32" />
+  </EntityType>
+</Schema>

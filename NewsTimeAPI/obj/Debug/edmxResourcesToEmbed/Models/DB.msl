@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="news_timeModelStoreContainer" CdmEntityContainer="news_timeEntities3">
+    <EntitySetMapping Name="Historial">
+      <EntityTypeMapping TypeName="news_timeModel.Historial">
+        <MappingFragment StoreEntitySet="Historial">
+          <ScalarProperty Name="IDHistorial" ColumnName="IDHistorial" />
+          <ScalarProperty Name="hstIDciudad" ColumnName="hstIDciudad" />
+          <ScalarProperty Name="info" ColumnName="info" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Noticia">
+      <EntityTypeMapping TypeName="news_timeModel.Noticia">
+        <MappingFragment StoreEntitySet="Noticia">
+          <ScalarProperty Name="IDCiudad" ColumnName="IDCiudad" />
+          <ScalarProperty Name="Idnoticia" ColumnName="Idnoticia" />
+          <ScalarProperty Name="autor" ColumnName="autor" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="urlToImage" ColumnName="urlToImage" />
+          <ScalarProperty Name="publishedAt" ColumnName="publishedAt" />
+          <ScalarProperty Name="content" ColumnName="content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ciudades">
+      <EntityTypeMapping TypeName="news_timeModel.Ciudades">
+        <MappingFragment StoreEntitySet="Ciudades">
+          <ScalarProperty Name="PaisCodigo" ColumnName="PaisCodigo" />
+          <ScalarProperty Name="CiudadNombre" ColumnName="CiudadNombre" />
+          <ScalarProperty Name="CiudadID" ColumnName="CiudadID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estados_tiempo">
+      <EntityTypeMapping TypeName="news_timeModel.Estados_tiempo">
+        <MappingFragment StoreEntitySet="Estados_tiempo">
+          <ScalarProperty Name="IDCiudad" ColumnName="IDCiudad" />
+          <ScalarProperty Name="visibility" ColumnName="visibility" />
+          <ScalarProperty Name="uv_index" ColumnName="uv_index" />
+          <ScalarProperty Name="feelslike" ColumnName="feelslike" />
+          <ScalarProperty Name="cloudcover" ColumnName="cloudcover" />
+          <ScalarProperty Name="humidity" ColumnName="humidity" />
+          <ScalarProperty Name="precip" ColumnName="precip" />
+          <ScalarProperty Name="pressure" ColumnName="pressure" />
+          <ScalarProperty Name="wind_dir" ColumnName="wind_dir" />
+          <ScalarProperty Name="wind_degree" ColumnName="wind_degree" />
+          <ScalarProperty Name="wind_speed" ColumnName="wind_speed" />
+          <ScalarProperty Name="weather_descriptions" ColumnName="weather_descriptions" />
+          <ScalarProperty Name="temperature" ColumnName="temperature" />
+          <ScalarProperty Name="observation_time" ColumnName="observation_time" />
+          <ScalarProperty Name="IdTeam" ColumnName="IdTeam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="news_timeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Ciudades">
+    <Key>
+      <PropertyRef Name="CiudadID" />
+    </Key>
+    <Property Name="CiudadID" Type="int" Nullable="false" />
+    <Property Name="CiudadNombre" Type="char" MaxLength="35" Nullable="false" />
+    <Property Name="PaisCodigo" Type="char" MaxLength="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estados_tiempo">
+    <Key>
+      <PropertyRef Name="IdTeam" />
+    </Key>
+    <Property Name="IdTeam" Type="int" Nullable="false" />
+    <Property Name="observation_time" Type="datetime" />
+    <Property Name="temperature" Type="int" />
+    <Property Name="weather_descriptions" Type="ntext" />
+    <Property Name="wind_speed" Type="varchar" MaxLength="50" />
+    <Property Name="wind_degree" Type="varchar" MaxLength="50" />
+    <Property Name="wind_dir" Type="varchar" MaxLength="50" />
+    <Property Name="pressure" Type="nchar" MaxLength="20" />
+    <Property Name="precip" Type="nchar" MaxLength="20" />
+    <Property Name="humidity" Type="nchar" MaxLength="20" />
+    <Property Name="cloudcover" Type="nchar" MaxLength="10" />
+    <Property Name="feelslike" Type="nchar" MaxLength="10" />
+    <Property Name="uv_index" Type="nchar" MaxLength="10" />
+    <Property Name="visibility" Type="nchar" MaxLength="10" />
+    <Property Name="IDCiudad" Type="int" />
+  </EntityType>
+  <EntityType Name="Historial">
+    <Key>
+      <PropertyRef Name="IDHistorial" />
+    </Key>
+    <Property Name="IDHistorial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hstIDciudad" Type="int" Nullable="false" />
+    <Property Name="info" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Noticia">
+    <Key>
+      <PropertyRef Name="Idnoticia" />
+    </Key>
+    <Property Name="Idnoticia" Type="int" Nullable="false" />
+    <Property Name="autor" Type="varchar" MaxLength="50" />
+    <Property Name="title" Type="ntext" />
+    <Property Name="description" Type="ntext" />
+    <Property Name="url" Type="ntext" />
+    <Property Name="urlToImage" Type="ntext" />
+    <Property Name="publishedAt" Type="datetime" />
+    <Property Name="content" Type="ntext" />
+    <Property Name="IDCiudad" Type="int" />
+  </EntityType>
+  <EntityContainer Name="news_timeModelStoreContainer">
+    <EntitySet Name="Ciudades" EntityType="Self.Ciudades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estados_tiempo" EntityType="Self.Estados_tiempo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Historial" EntityType="Self.Historial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Noticia" EntityType="Self.Noticia" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
