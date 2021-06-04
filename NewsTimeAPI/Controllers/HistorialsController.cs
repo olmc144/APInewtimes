@@ -21,6 +21,7 @@ namespace NewsTimeAPI.Controllers
         {
             var historialciudad = (from h in db.Historial
                                   join c in db.Ciudades on h.hstIDciudad equals c.CiudadID
+                                  orderby h.IDHistorial descending
                                   select c ).ToList();
 
             return Ok(historialciudad);
