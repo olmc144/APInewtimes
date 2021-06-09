@@ -19,15 +19,9 @@ namespace NewsTimeAPI.Controllers
         // GET: api/Historials
         [HttpGet]
         [Route("api/Historialspruebas")]
-        public IHttpActionResult GetHistorial()
-        {            
-
-            var historialciudad = (from h in db.Historial
-                                  join c in db.Ciudades on h.hstIDciudad equals c.CiudadID
-                                  orderby h.IDHistorial descending
-                                  select c ).ToList();
-
-            return Ok(historialciudad);
+        public IQueryable<Historial> GetHistorial()
+        {
+            return db.Historial;
         }
 
         // GET: api/Historials/5

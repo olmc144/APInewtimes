@@ -14,30 +14,15 @@ namespace NewsTimeAPI.Controllers
         private news_timeEntities3 context = new news_timeEntities3();
 
         [HttpGet]
-        [Route("api/SearchTime/{idciudad}")]
-        public IHttpActionResult Gettables(int idciudad)
+        [Route("api/SearchNombCiudades/{nomb_ciudad}")]
+        public IHttpActionResult GetCiudadesNombre(string nomb_ciudad)
         {
-            news_timeEntities3 sd = new news_timeEntities3();            
+            news_timeEntities3 sd = new news_timeEntities3();                        
 
-            var id_ciudad = Convert.ToInt32(idciudad);
-
-            var query = from c in sd.Ciudades
-                        join n in sd.Noticia on c.CiudadID equals n.IDCiudad                    
-                        where n.IDCiudad == id_ciudad
-                        select new NoticiaTime
-                        {
-                            //CiudadID = c.CiudadID,
-                            //NombreCiudad = c.CiudadNombre,
-                            //Autornoticia = n.autor,
-                            //TitleNoticia = n.title,
-                            //DescriptionNoticia = n.description,
-                            //UrlNoticia = n.url,
-                            //UrlToImage = n.urlToImage,
-                            //PublishedAt = (DateTime)n.publishedAt,
-                            //Content = n.content
-                        };            
+            var query = from c in sd.Ciudades                                           
+                        where c.CiudadNombre.Contains(nomb_ciudad)
+                        select c ;            
                        
-
             return Ok(query);
         }
 
@@ -70,6 +55,10 @@ namespace NewsTimeAPI.Controllers
                                  {
                                      observation_time = (DateTime)t.observation_time,
                                      temperature = (int)t.temperature,
+                                     pressure = t.pressure,
+                                     wind_degree = t.wind_degree,
+                                     wind_dir = t.wind_dir,
+                                     wind_speed = t.wind_speed,
                                      weather_descriptions = new List<Weatherdescriptions>()
                                      {
                                          new Weatherdescriptions() { description = t.weather_descriptions }
@@ -81,12 +70,20 @@ namespace NewsTimeAPI.Controllers
             HistorialsController historialsController = new HistorialsController();
 
             Historial historial = new Historial();
+            Ciudades ciudades = new Ciudades();
 
-            historial.hstIDciudad = 3;
-            historial.info = "dato nuevo 3";
+            //verificamos 
+
+            var ciud = (from ci in sd.Ciudades
+                        where ci.CiudadID == idciudad
+                        select ci.CiudadNombre).FirstOrDefault();                        
+            
+            historial.hstIDciudad = idciudad;
+            historial.info = ciud;
 
             historialsController.PostHistorial(historial);
-            //PostHistorial(historial);
+            
+                                   
 
             return Ok(query);
         }

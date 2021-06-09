@@ -20,13 +20,13 @@ namespace NewsTimeAPI.Models
 
         public List<Weatherdescriptions> weather_descriptions { get; set; }
 
-        public int wind_speed { get; set; }
+        public string wind_speed { get; set; }
 
-        public int wind_degree { get; set; }
+        public string wind_degree { get; set; }
 
         public string wind_dir { get; set; }
 
-        public int pressure { get; set; }
+        public string pressure { get; set; }
     }
 
     public class Weatherdescriptions
