@@ -27,7 +27,7 @@ namespace NewsTimeAPI.Models
     
         public virtual DbSet<Historial> Historial { get; set; }
         public virtual DbSet<Noticia> Noticia { get; set; }
-        public virtual DbSet<Ciudades> Ciudades { get; set; }
         public virtual DbSet<Estados_tiempo> Estados_tiempo { get; set; }
+        public virtual DbSet<Ciudades> Ciudades { get; set; }
     }
 }

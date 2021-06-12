@@ -7,7 +7,7 @@ namespace NewsTimeAPI.Models
 {
     public class NoticiaTime
     {               
-        public List<News> news { get; set; }
+        public List<Newsw> news { get; set; }
 
         public List<Currentweather> current_weather { get; set; }
         
@@ -34,7 +34,7 @@ namespace NewsTimeAPI.Models
         public string description { get; set; }
     }
 
-    public class News
+    public class Newsw
     {
         public string author { get; set; }
 

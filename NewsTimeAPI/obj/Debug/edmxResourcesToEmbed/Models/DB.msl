@@ -25,15 +25,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Ciudades">
-      <EntityTypeMapping TypeName="news_timeModel.Ciudades">
-        <MappingFragment StoreEntitySet="Ciudades">
-          <ScalarProperty Name="PaisCodigo" ColumnName="PaisCodigo" />
-          <ScalarProperty Name="CiudadNombre" ColumnName="CiudadNombre" />
-          <ScalarProperty Name="CiudadID" ColumnName="CiudadID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Estados_tiempo">
       <EntityTypeMapping TypeName="news_timeModel.Estados_tiempo">
         <MappingFragment StoreEntitySet="Estados_tiempo">
@@ -52,6 +43,15 @@
           <ScalarProperty Name="temperature" ColumnName="temperature" />
           <ScalarProperty Name="observation_time" ColumnName="observation_time" />
           <ScalarProperty Name="IdTeam" ColumnName="IdTeam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ciudades">
+      <EntityTypeMapping TypeName="news_timeModel.Ciudades">
+        <MappingFragment StoreEntitySet="Ciudades">
+          <ScalarProperty Name="PaisCodigo" ColumnName="PaisCodigo" />
+          <ScalarProperty Name="CiudadNombre" ColumnName="CiudadNombre" />
+          <ScalarProperty Name="CiudadID" ColumnName="CiudadID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

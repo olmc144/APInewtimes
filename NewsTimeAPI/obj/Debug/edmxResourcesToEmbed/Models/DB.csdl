@@ -25,17 +25,9 @@
   <EntityContainer Name="news_timeEntities3" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Historial" EntityType="Self.Historial" />
     <EntitySet Name="Noticia" EntityType="Self.Noticia" />
-    <EntitySet Name="Ciudades" EntityType="news_timeModel.Ciudades" />
     <EntitySet Name="Estados_tiempo" EntityType="news_timeModel.Estados_tiempo" />
+    <EntitySet Name="Ciudades" EntityType="news_timeModel.Ciudades" />
   </EntityContainer>
-  <EntityType Name="Ciudades">
-    <Key>
-      <PropertyRef Name="CiudadID" />
-    </Key>
-    <Property Name="CiudadID" Type="Int32" Nullable="false" />
-    <Property Name="CiudadNombre" Type="String" Nullable="false" MaxLength="35" FixedLength="true" Unicode="false" />
-    <Property Name="PaisCodigo" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
-  </EntityType>
   <EntityType Name="Estados_tiempo">
     <Key>
       <PropertyRef Name="IdTeam" />
@@ -55,5 +47,13 @@
     <Property Name="uv_index" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="visibility" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="IDCiudad" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Ciudades">
+    <Key>
+      <PropertyRef Name="CiudadID" />
+    </Key>
+    <Property Name="CiudadID" Type="Int32" Nullable="false" />
+    <Property Name="CiudadNombre" Type="String" Nullable="false" MaxLength="35" FixedLength="true" Unicode="false" />
+    <Property Name="PaisCodigo" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
   </EntityType>
 </Schema>
