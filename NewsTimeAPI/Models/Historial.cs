@@ -15,7 +15,7 @@ namespace NewsTimeAPI.Models
     public partial class Historial
     {
         public int IDHistorial { get; set; }
-        public int hstIDciudad { get; set; }
+        public string nombciudad { get; set; }
         public string info { get; set; }
     }
 }

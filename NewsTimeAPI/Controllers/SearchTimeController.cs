@@ -155,6 +155,18 @@ namespace NewsTimeAPI.Controllers
                 data_consol.Add("news", news_w);
                 data_consol.Add("current_weather", current);
 
+                //llamado del controlador historial para hacer uso de sus metodos
+                HistorialsController historialsController = new HistorialsController();
+                
+                Historial historial = new Historial();  
+                
+                //asignamos los valores
+                historial.nombciudad = current.name;
+                historial.info = "info";
+
+                //creamos el insert de los datos 
+                historialsController.PostHistorial(historial);                
+
                 return Ok(data_consol);
             }
             else

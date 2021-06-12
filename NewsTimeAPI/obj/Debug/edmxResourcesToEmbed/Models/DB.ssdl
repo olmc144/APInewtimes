@@ -33,7 +33,7 @@
       <PropertyRef Name="IDHistorial" />
     </Key>
     <Property Name="IDHistorial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="hstIDciudad" Type="int" Nullable="false" />
+    <Property Name="nombciudad" Type="nchar" MaxLength="50" Nullable="false" />
     <Property Name="info" Type="ntext" />
   </EntityType>
   <EntityType Name="Noticia">

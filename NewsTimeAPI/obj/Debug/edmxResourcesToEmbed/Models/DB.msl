@@ -1,15 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="news_timeModelStoreContainer" CdmEntityContainer="news_timeEntities3">
-    <EntitySetMapping Name="Historial">
-      <EntityTypeMapping TypeName="news_timeModel.Historial">
-        <MappingFragment StoreEntitySet="Historial">
-          <ScalarProperty Name="IDHistorial" ColumnName="IDHistorial" />
-          <ScalarProperty Name="hstIDciudad" ColumnName="hstIDciudad" />
-          <ScalarProperty Name="info" ColumnName="info" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Noticia">
       <EntityTypeMapping TypeName="news_timeModel.Noticia">
         <MappingFragment StoreEntitySet="Noticia">
@@ -52,6 +43,15 @@
           <ScalarProperty Name="PaisCodigo" ColumnName="PaisCodigo" />
           <ScalarProperty Name="CiudadNombre" ColumnName="CiudadNombre" />
           <ScalarProperty Name="CiudadID" ColumnName="CiudadID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Historial">
+      <EntityTypeMapping TypeName="news_timeModel.Historial">
+        <MappingFragment StoreEntitySet="Historial">
+          <ScalarProperty Name="info" ColumnName="info" />
+          <ScalarProperty Name="nombciudad" ColumnName="nombciudad" />
+          <ScalarProperty Name="IDHistorial" ColumnName="IDHistorial" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

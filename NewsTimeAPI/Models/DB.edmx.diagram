@@ -5,10 +5,10 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="61856c59d3224781a1c9ca552a6bcae9" Name="Diagram1">
-        <EntityTypeShape EntityType="news_timeModel.Historial" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="news_timeModel.Noticia" Width="1.5" PointX="0.875" PointY="2.875" IsExpanded="true" />
         <EntityTypeShape EntityType="news_timeModel.Estados_tiempo" Width="1.5" PointX="6.125" PointY="0.75" />
         <EntityTypeShape EntityType="news_timeModel.Ciudades" Width="1.5" PointX="3.375" PointY="3.75" />
+        <EntityTypeShape EntityType="news_timeModel.Historial" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -17,8 +17,6 @@ namespace NewsTimeAPI.Controllers
         private news_timeEntities3 db = new news_timeEntities3();
 
         // GET: api/Historials
-        [HttpGet]
-        [Route("api/Historialspruebas")]
         public IQueryable<Historial> GetHistorial()
         {
             return db.Historial;
@@ -82,22 +80,7 @@ namespace NewsTimeAPI.Controllers
             }
 
             db.Historial.Add(historial);
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                if (HistorialExists(historial.IDHistorial))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = historial.IDHistorial }, historial);
         }
@@ -131,5 +114,5 @@ namespace NewsTimeAPI.Controllers
         {
             return db.Historial.Count(e => e.IDHistorial == id) > 0;
         }
-    }    
+    }
 }

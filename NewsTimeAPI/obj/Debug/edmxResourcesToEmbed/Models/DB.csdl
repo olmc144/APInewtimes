@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="news_timeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Historial">
-    <Key>
-      <PropertyRef Name="IDHistorial" />
-    </Key>
-    <Property Name="IDHistorial" Type="Int32" Nullable="false" />
-    <Property Name="hstIDciudad" Type="Int32" Nullable="false" />
-    <Property Name="info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-  </EntityType>
   <EntityType Name="Noticia">
     <Key>
       <PropertyRef Name="Idnoticia" />
@@ -23,10 +15,10 @@
     <Property Name="IDCiudad" Type="Int32" />
   </EntityType>
   <EntityContainer Name="news_timeEntities3" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Historial" EntityType="Self.Historial" />
     <EntitySet Name="Noticia" EntityType="Self.Noticia" />
     <EntitySet Name="Estados_tiempo" EntityType="news_timeModel.Estados_tiempo" />
     <EntitySet Name="Ciudades" EntityType="news_timeModel.Ciudades" />
+    <EntitySet Name="Historial" EntityType="news_timeModel.Historial" />
   </EntityContainer>
   <EntityType Name="Estados_tiempo">
     <Key>
@@ -55,5 +47,13 @@
     <Property Name="CiudadID" Type="Int32" Nullable="false" />
     <Property Name="CiudadNombre" Type="String" Nullable="false" MaxLength="35" FixedLength="true" Unicode="false" />
     <Property Name="PaisCodigo" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Historial">
+    <Key>
+      <PropertyRef Name="IDHistorial" />
+    </Key>
+    <Property Name="IDHistorial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombciudad" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>
